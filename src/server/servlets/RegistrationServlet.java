@@ -1,15 +1,22 @@
-package server;
+package server.servlets;
+
+import db.Database;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 
 /**
  * Created by Samuel on 20-4-2015.
  */
 public class RegistrationServlet extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp) {
+        /*
+            * The input-validation will be handled client-side, to minimize network-traffic and server-load.
+         */
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String voornaam = req.getParameter("voornaam");
@@ -18,25 +25,18 @@ public class RegistrationServlet extends HttpServlet {
         String telnr = req.getParameter("telnr");
         String adres = req.getParameter("adres");
         String plaats = req.getParameter("plaats");
-
-        String msg = "";
         RequestDispatcher rd = null;
-        /*
-            * If the input is valid, the 'error'-String returned will be empty.
-            * Otherwise, the RequestDispatcher will send the user back to the form
-            * which will show the error message.
-         */
-
-        if (inputValid().length() == 0) {
-
+        try {
+            if (Database.registerUser(username, password, voornaam, achternaam, email, adres, plaats, telnr)) {
+                //TODO: redirect with successful registration message here
+            }
+            else {
+                //TODO: redirect with error message here
+            }
+        } catch (InvalidKeySpecException |NoSuchAlgorithmException | InstantiationException | IllegalAccessException ex) {
+            //TODO: redirect with error message here
         }
-        else {
 
-        }
-    }
-    public String inputValid() {
-        String error = "";
-        return error;
     }
 
 }
