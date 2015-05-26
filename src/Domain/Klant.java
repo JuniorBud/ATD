@@ -14,9 +14,14 @@ public class Klant {
     private String naam, achternaam, tussenvoegsel;
     private int korting;
     private Date bezoek, geboortedatum;
-    private Adres adres;
+    private String adres2;
+    String woonplaats;
     private ArrayList<Auto> alleAutos;
-    // Comment door Dominic
+    private String email;
+    Adres adres;
+    String telefoonnummer;
+    private String wachtwoord;
+
     public Klant(String nm, String ts, String anm, String gbt, Adres adres, Auto auto) {
         alleAutos = new ArrayList<Auto>();
         naam = nm;
@@ -30,6 +35,17 @@ public class Klant {
         this.adres = adres;
         bezoek = new Date();
         voegAutoToe(auto);
+    }
+
+    public Klant(String v, String a, String w, String ad, String wo, String e, String t) {
+        ArrayList<Auto> autos = new ArrayList<Auto>();
+            naam = v;
+            achternaam = a;
+            wachtwoord = w;
+            adres2 = ad;
+            woonplaats = wo;
+            email = e;
+            telefoonnummer = t;
     }
 
     public String getTussenvoegsel() {
@@ -139,5 +155,17 @@ public class Klant {
                 latestDate = a.getLaatsteOnderhoud();
         }
         return latestDate;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getWachtwoord() {
+        return wachtwoord;
+    }
+    public void setWachtwoord(String wachtwoord) {
+        this.wachtwoord = wachtwoord;
     }
 }

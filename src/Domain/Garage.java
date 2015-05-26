@@ -41,36 +41,24 @@ public class Garage {
 	}
 
 	public static void vullenMetTestData() throws ParseException {
-		voegKlantToe(new Klant("Henk", "", "Sjaak", "01-01-1973", new Adres("Houtstraat", 1, "", "1521GH", "Utrecht"), new Auto("Peugeot", "506", "NH-56-KJ", 2001)));
-		voegKlantToe(new Klant("Liam", "de", "Haas", "03-09-1994", new Adres("Pinkstraat", 15, "", "1541HC", "Koog aan de Zaan"), new Auto("BMW", "M5", "GHJ-23-K", 2013)));
-		voegKlantToe(new Klant("Nathan", "van", "Nispen", "21-09-1993", new Adres("Verschuurstraat", 21, "", "7891OP", "Hilversum"), new Auto("Mazda", "626", "ODX-1-00", 1999)));
-		voegKlantToe(new Klant("Frits", "", "Budding", "15-01-1993", new Adres("Bakkerstraat", 67, "", "4652AL", "Hilversum"), new Auto("Nissan", "GTR", "81-PVJ-1", 2012)));
-		voegKlantToe(new Klant("Jasper", "is de", "Sjaak", "01-01-1973", new Adres("Houtstraat", 1, "a", "1658FG", "Utrecht"), new Auto("Suzuki", "Swift", "1-KBB-00", 2011)));
+		voegKlantToe(new Klant("Kees", "", "Boon", "01-01-1990", new Adres("Nijenoord", 1, "", "1321OJ", "Utrecht"), new Auto("Peugeot", "106", "FT-FG-14", 1994)));
+		voegKlantToe(new Klant("Niels", "van", "Wandelen", "03-04-1994", new Adres("Pinkstraat", 15, "", "1441HR", "Zeist"), new Auto("BMW", "1 serie", "BM-WI-01", 1997)));
+		voegKlantToe(new Klant("Symen", "", "Wahle", "21-09-1970", new Adres("Houtstraat", 21, "", "1451AF", "Leusden"), new Auto("Nissan", "Micra", "RW-12-RW", 1999)));
+		voegKlantToe(new Klant("Frits", "", "Budding", "15-01-1993", new Adres("Bakkerstraat", 67, "", "4652AL", "Hilversum"), new Auto("Nissan", "note", "HT-FE-21", 2002)));
+		voegKlantToe(new Klant("Robin", "", "Wahle", "01-06-1980", new Adres("Houtstraat", 1, "a", "1451AF", "Leusden"), new Auto("Suzuki", "Alto", "VS-DR-12", 2009)));
 
 		getVoorraad().voegOnderdeelToe(new Onderdeel("Boutje nummer 12", 123456, 9, 8));
 		getVoorraad().voegOnderdeelToe(new Onderdeel("Boutje nummer 13", 123457, 9, 11));
-		getVoorraad().voegOnderdeelToe(new Onderdeel("Boutje nummer 14", 123458, 9, 12));
-		getVoorraad().voegOnderdeelToe(new Onderdeel("Boutje nummer 15", 123459, 10, 13));
-		getVoorraad().voegOnderdeelToe(new Onderdeel("Boutje nummer 16", 123460, 11, 14));
 
-		getVoorraad().voegBrandstofToe(new Brandstof("LPG", 121, 99, 100, 1.5));
+
+		getVoorraad().voegBrandstofToe(new Brandstof("LPG", 121, 100, 99, 1.5));
 		getVoorraad().voegBrandstofToe(new Brandstof("Gas", 121, 100, 100, 1.5));
-		getVoorraad().voegBrandstofToe(new Brandstof("Ongelood", 121, 101, 100, 1.5));
-		getVoorraad().voegBrandstofToe(new Brandstof("Gas", 123, 80, 100, 1.5));
-		getVoorraad().voegBrandstofToe(new Brandstof("LPG", 123, 75, 100, 1.5));
+		getVoorraad().voegBrandstofToe(new Brandstof("Ongelood", 121, 100, 101, 1.5));
 
-		getKlant("Henk", "", "Sjaak").voegAutoToe(new Auto("BMW", "M3", "1-KBC-01", 2013));
 
-		getKlant("Liam", "de", "Haas").zoekAuto("GHJ-23-K").setLaatsteOnderhoud("03-09-2012");
 		getKlant("Frits", "", "Budding").zoekAuto("81-PVJ-1").setLaatsteOnderhoud("03-10-2012");
-		getKlant("Henk", "", "Sjaak").zoekAuto("1-KBC-01").setLaatsteOnderhoud("03-09-2011");
-		getKlant("Henk", "", "Sjaak").zoekAuto("NH-56-KJ").setLaatsteOnderhoud("03-09-2010");
 
 		voegMonteurToe(new Monteur("Japie", "van", "Oosten", "12-08-1990", new Adres("Bakkersweg", 12, "a", "4687DK", "Lutjebroek")));
-		voegMonteurToe(new Monteur("Kees", "", "Havik", "05-06-1980", new Adres("Houtveldweg", 156, "", "4791KL", "Utrecht")));
-		voegMonteurToe(new Monteur("Joop", "", "Zoetemelk", "19-02-1975", new Adres("Nijenoord", 1, "", "1354HJ", "Amersfoort")));
-		voegMonteurToe(new Monteur("Menno", "de", "Bakker", "21-03-1989", new Adres("Oudenoord", 700, "", "1492RT", "Utrecht")));
-		voegMonteurToe(new Monteur("Wiebrand", "", "Langenbach", "21-11-1960", new Adres("Dorpsstraat", 210, "", "1376HJ", "Utrecht")));
 
 		Klus w1 = new Klus("Reparatie", getKlant("Henk", "", "Sjaak"), getKlant("Henk", "", "Sjaak").zoekAuto("NH-56-KJ"), "Achteras gebroken en hij is hellemaal kapot", 5.0);
 		Klus w2 = new Klus("Onderhoud", getKlant("Liam", "de", "Haas"), getKlant("Liam", "de", "Haas").zoekAuto("GHJ-23-K"), "Kleine beurt", 4.0);
@@ -83,13 +71,13 @@ public class Garage {
 		ArrayList<Monteur> testMonteurs = new ArrayList<Monteur>();
 		testMonteurs.add(zoekMonteur("Japie", "van", "Oosten"));
 
-		Weekplanning wp1 = new Weekplanning(1, 2014);
-		Weekplanning wp2 = new Weekplanning(1, 2013);
+		Weekplanning wp1 = new Weekplanning(1, 2015);
+		Weekplanning wp2 = new Weekplanning(1, 2014);
 		voegWeekplanningToe(wp2);
 		voegWeekplanningToe(wp1);
 		
 		for(int i = 2; i < 15;i++){
-			Weekplanning wp = new Weekplanning(i, 2014);
+			Weekplanning wp = new Weekplanning(i, 2015);
 			voegWeekplanningToe(wp);
         }
 
@@ -97,7 +85,7 @@ public class Garage {
 
 		testMonteurs.add(zoekMonteur("Wiebrand", "", "Langenbach"));
 
-        zoekWeekplanning(1, 2014).planKlusIn(w3, testMonteurs, 1, 14, 16);
+        zoekWeekplanning(1, 2015).planKlusIn(w3, testMonteurs, 1, 14, 16);
 
 		voegTemplateToe("testTemplate", "Hallo [voornaam] [achternaam], bij deze willen wij u laten weten dat uw auto voor het laatst op [laatste_onderhoud] voor onderhoud is langsgeweest");
 	}
@@ -118,23 +106,23 @@ public class Garage {
 		return klant;
 	}
 
-	public static boolean verwijderKlant(String vnm, String ts, String anm) {
-		boolean verwijdert = false;
+    public static boolean verwijderKlant(String vnm, String ts, String anm) {
+        boolean verwijderd = false;
 
-		if (getKlant(vnm, ts, anm) != null) {
-			alleKlanten.remove(getKlant(vnm, ts, anm));
-			verwijdert = true;
-		}
-		return verwijdert;
-	}
+        if (getKlant(vnm, ts, anm) != null) {
+            alleKlanten.remove(getKlant(vnm, ts, anm));
+            verwijderd = true;
+        }
+        return verwijderd;
+    }
 
-	public static boolean voegKlantToe(Klant klant) {
-		boolean toegevoegd = false;
+    public static boolean voegKlantToe(Klant klant) {
+        boolean toegevoegd = false;
 
-		if (getKlant(klant.getNaam(), klant.getTussenvoegsel(), klant.getAchternaam()) == null) {
-			alleKlanten.add(klant);
-			toegevoegd = true;
-		}
+        if (getKlant(klant.getNaam(), klant.getTussenvoegsel(), klant.getAchternaam()) == null) {
+            alleKlanten.add(klant);
+            toegevoegd = true;
+        }
 
 		return toegevoegd;
 	}
@@ -173,16 +161,16 @@ public class Garage {
 	}
 
 	public static boolean verwijderTemplate(String nm) {
-		boolean templateVerwijdert = false;
+		boolean templateVerwijderd = false;
 
 		Template tp = zoekTemplate(nm);
 
 		if (tp != null) {
 			alleTemplates.remove(tp);
-			templateVerwijdert = true;
+			templateVerwijderd = true;
 		}
 
-		return templateVerwijdert;
+		return templateVerwijderd;
 	}
 
 	public static ArrayList<Template> getAlleTemplates() {
@@ -237,13 +225,13 @@ public class Garage {
 	}
 
 	public static boolean verwijderMonteur(String vnm, String ts, String anm) {
-		boolean verwijdert = false;
+		boolean verwijderd = false;
 
 		if (zoekMonteur(vnm, ts, anm) != null) {
 			alleMonteurs.remove(zoekMonteur(vnm, ts, anm));
-			verwijdert = true;
+			verwijderd = true;
 		}
-		return verwijdert;
+		return verwijderd;
 	}
 
 	public static ArrayList<Klus> getAlleOningeplandeWerkzaamheden() {
@@ -286,14 +274,14 @@ public class Garage {
 	}
 
 	public static boolean verwijderKlus(Klant k, Auto a, String klusType, Date aangemaakt) {
-		boolean verwijdert = false;
+		boolean verwijderd = false;
 		for (Klus kl : alleKlussen) {
 			if (kl.getKlant().equals(k) && kl.getAuto().equals(a) && kl.getKlusType().equals(klusType) && kl.getAangemaakt().equals(aangemaakt)) {
 				alleKlussen.remove(kl);
-				verwijdert = false;
+				verwijderd = false;
 			}
 		}
-		return verwijdert;
+		return verwijderd;
 	}
 
 	public static Weekplanning zoekWeekplanning(int weeknr, int jaar) {

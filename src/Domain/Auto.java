@@ -8,13 +8,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Auto {
-    private String merk, kenteken, model;
+    private String merk, kenteken, model, type;
     private int bouwjaar;
     private Date laatsteOnderhoud;
 
-    public Auto(String mk, String md, String kt, int bj){
+    public Auto(String mk, String tp, String kt, int bj){
         merk = mk;
-        model = md;
+        type = tp;
         kenteken = kt;
         bouwjaar = bj;
         laatsteOnderhoud = new Date();
@@ -63,6 +63,17 @@ public class Auto {
         } catch (ParseException exc) {
             exc.printStackTrace();
         }
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    public String toString(){
+        return "Merk: " + merk + ", Type: " + type + ", Kenteken: " + kenteken;
     }
 }
 

@@ -8,7 +8,7 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>Login Servlet</servlet-name>
-        <servlet-class> server.LoginServlet </servlet-class>
+        <servlet-class> server.servlets.LoginServlet </servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login Servlet</servlet-name>
@@ -17,10 +17,55 @@
     
     <servlet>
         <servlet-name>Registration Servlet</servlet-name>
-        <servlet-class> server.RegistrationServlet</servlet-class>
+        <servlet-class> server.servlets.RegistrationServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Registration Servlet</servlet-name>
         <url-pattern>/register.do</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Voorraadbeheer Servlet</servlet-name>
+        <servlet-class>server.servlets.VoorraadBeheerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Voorraadbeheer Servlet</servlet-name>
+        <url-pattern>Voorraadbeheer/VoorraadBeheer.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>KlantAanmaken</servlet-name>
+        <servlet-class>server.servlets.KlantAanmakenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>KlantAanmaken</servlet-name>
+        <url-pattern>/KlantAanmakenServlet.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NieuweAuto</servlet-name>
+        <servlet-class>server.servlets.AutoRegistrerenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NieuweAuto</servlet-name>
+        <url-pattern>/AutoRegistrerenServlet.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LaadAutos</servlet-name>
+        <servlet-class>server.servlets.LaadAutosServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LaadAutos</servlet-name>
+        <url-pattern>/LaadAutosServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>HomePage</servlet-name>
+        <servlet-class>server.servlets.StartServlet</servlet-class>
+    </servlet>
 </web-app>
+
+
+
+
+
