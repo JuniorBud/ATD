@@ -28,7 +28,7 @@ public class Adres {
 		}
 	}
 
-	public int getHuisnummmer() {
+	public int getHuisnummer() {
 		return huisnummmer;
 	}
 

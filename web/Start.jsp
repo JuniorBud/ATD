@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Hallo</h1>
-<form method = "get" action = "klant_aanmaken.jsp">
+<form method = "get" action = "KlantAanmaken.jsp">
 Registreren: <input type = "submit" value = "Registreren">
 </form>
 <form method = "get" action = "monteur.jsp">

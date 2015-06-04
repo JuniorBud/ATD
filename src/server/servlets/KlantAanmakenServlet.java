@@ -6,10 +6,12 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet(name = "KlantAanmakenServlet")
 public class KlantAanmakenServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException,IOException{
 		String voornaam = req.getParameter("voornaam");
@@ -22,7 +24,7 @@ public class KlantAanmakenServlet extends HttpServlet{
 		
 		if(voornaam != null && achternaam != null && wachtwoord != null && adres != null && woonplaats != null && email != null && telefoonnummer != null){
 			Klant k = new Klant(voornaam,achternaam,wachtwoord,adres,woonplaats,email,telefoonnummer);
-			KlantenList kl = (KlantenList)this.getServletContext().getAttribute("Klanten");
+			Klant kl = (Klant)this.getServletContext().getAttribute("Klanten");
 			kl.voegKlantToe(k);
 			
 			RequestDispatcher rd = req.getRequestDispatcher("Start.jsp");
@@ -30,7 +32,7 @@ public class KlantAanmakenServlet extends HttpServlet{
 		}
 		else{
 			req.setAttribute("message","Niet alle velden zijn ingevuld!");
-			RequestDispatcher rd = req.getRequestDispatcher("klant_aanmaken.jsp");
+			RequestDispatcher rd = req.getRequestDispatcher("KlantAanmaken.jsp");
 			rd.forward(req,resp);
 			
 		}

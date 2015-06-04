@@ -1,7 +1,6 @@
 package dao;
 
-import Domain.Adres;
-import Domain.Auto;
+import model.Auto;
 
 import javax.sql.DataSource;
 import java.io.Serializable;
@@ -61,7 +60,7 @@ public class AutoDAO implements GenericDAO {
 
     @Override
     public List find() {
-        List<Auto> autoList = new ArrayList<Auto>();
+        List<Auto> autoList = new ArrayList<>();
         Connection con = null;
         PreparedStatement pst = null;
         ResultSet rst = null;
@@ -94,7 +93,7 @@ public class AutoDAO implements GenericDAO {
         return autoList;
     }
     public List findByKlantId(Long id) {
-        List<Auto> autoList = new ArrayList<Auto>();
+        List<Auto> autoList = new ArrayList<>();
         Connection con = null;
         PreparedStatement pst = null;
         ResultSet rst = null;

@@ -14,7 +14,7 @@
         <servlet-name>Login Servlet</servlet-name>
         <url-pattern>/login.do</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>Registration Servlet</servlet-name>
         <servlet-class> server.servlets.RegistrationServlet</servlet-class>
@@ -34,21 +34,21 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>KlantAanmaken</servlet-name>
+        <servlet-name>KlantAanmaken Servlet</servlet-name>
         <servlet-class>server.servlets.KlantAanmakenServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>KlantAanmaken</servlet-name>
-        <url-pattern>/KlantAanmakenServlet.do</url-pattern>
+        <servlet-name>KlantAanmaken Servlet</servlet-name>
+        <url-pattern>KlantAanmakenServlet.do</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>NieuweAuto</servlet-name>
+        <servlet-name>NieuweAuto Servlet</servlet-name>
         <servlet-class>server.servlets.AutoRegistrerenServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>NieuweAuto</servlet-name>
-        <url-pattern>/AutoRegistrerenServlet.do</url-pattern>
+        <servlet-name>NieuweAuto Servlet</servlet-name>
+        <url-pattern>AutoRegistrerenServlet.do</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -57,12 +57,72 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>LaadAutos</servlet-name>
-        <url-pattern>/LaadAutosServlet.do</url-pattern>
+        <url-pattern>LaadAutosServlet.do</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>HomePage</servlet-name>
-        <servlet-class>server.servlets.StartServlet</servlet-class>
+        <servlet-name>Klus inplannen servlet</servlet-name>
+        <servlet-class>server.servlets.KlusInplannenServlet</servlet-class>
     </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Klus inplannen servlet</servlet-name>
+        <url-pattern>/Werkplaats/KlusInplannen.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Weekplanning</servlet-name>
+        <servlet-class>server.servlets.WeekplanningServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Weekplanning</servlet-name>
+        <url-pattern>/Werkplaats/Weekplanning.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>KlusServlet</servlet-name>
+        <servlet-class>server.servlets.KlusServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>KlusServlet</servlet-name>
+        <url-pattern>/Werkplaats/Klus.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>KlusAfrondenServlet</servlet-name>
+        <servlet-class>server.servlets.KlusAfrondenServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>KlusAfrondenServlet</servlet-name>
+        <url-pattern>/Werkplaats/KlusAfronden.do</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ReserveringAanmaken</servlet-name>
+        <servlet-class>server.servlets.ReserveringAanmakenServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReserveringAanmaken</servlet-name>
+        <url-pattern>Reserveringen/ReserveringAanmaken.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Reservering</servlet-name>
+        <servlet-class>server.servlets.ReserveringServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Reservering</servlet-name>
+        <url-pattern>Reserveringen/Reservering.do</url-pattern>
+    </servlet-mapping>
+
 </web-app>
 
 

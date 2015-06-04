@@ -1,6 +1,5 @@
 package dao;
 
-import model.Adres;
 import model.Onderdeel;
 import model.Werkzaamheid;
 

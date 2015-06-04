@@ -17,7 +17,9 @@ public class Klus {
     private String opmerkingAanmaken, opmerkingAfronden;
     private double verwachteUrenNodig;
     private Date aangemaakt;
+    private Afspraak afspraak = null;
     private int beginTijd, eindTijd, dag;
+    private ArrayList<Integer> gebruikteOnderdelenAantallen;
 
     public Klus(String klusType, Klant klant, Auto auto, String opmerkingAanmaken, double verwachteUrenNodig) {
         this.klusType = klusType;
@@ -133,5 +135,22 @@ public class Klus {
 
     public void setDag(int dag) {
         this.dag = dag;
+    }
+    public Afspraak getAfspraak() {
+        return afspraak;
+    }
+    public void setAfspraak(Afspraak afspraak) {
+        this.afspraak = afspraak;
+    }
+
+
+    public Klus(String klusType, Afspraak afspraak) {
+        this.klusType = klusType;
+        this.afspraak = afspraak;
+    }
+
+    public void setGebruikteOnderdelen(ArrayList<Onderdeel> gebruikteOnderdelen, ArrayList<Integer> gebruikteAantallen) {
+        this.gebruikteOnderdelen = gebruikteOnderdelen;
+        this.gebruikteOnderdelenAantallen = gebruikteAantallen;
     }
 }

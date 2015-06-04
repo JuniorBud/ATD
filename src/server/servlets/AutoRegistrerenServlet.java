@@ -1,5 +1,8 @@
 package server.servlets;
 
+import Domain.Auto;
+import Domain.Klant;
+
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -20,7 +23,7 @@ public class AutoRegistrerenServlet extends HttpServlet{
 			for(int i = 0; i < k.getAutoList().size(); i++){
 				req.setAttribute("auto"+i, k.getAutoList().get(i).toString());
 			}
-			RequestDispatcher rd = req.getRequestDispatcher("klant_auto's.jsp");
+			RequestDispatcher rd = req.getRequestDispatcher("klant_auto_s.jsp");
 			rd.forward(req,resp);
 		}
 		else{

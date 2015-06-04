@@ -19,6 +19,7 @@ public class Klant {
     private ArrayList<Auto> alleAutos;
     private String email;
     Adres adres;
+    ArrayList<Klant> klanten = new ArrayList<Klant>();
     String telefoonnummer;
     private String wachtwoord;
 
@@ -119,6 +120,8 @@ public class Klant {
         return geboortedatum;
     }
 
+
+
     public void setGeboortedatum(String geboortedatum) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         this.geboortedatum = sdf.parse(geboortedatum);
@@ -167,5 +170,25 @@ public class Klant {
     }
     public void setWachtwoord(String wachtwoord) {
         this.wachtwoord = wachtwoord;
+    }
+
+
+    public ArrayList<Klant> getList(){
+        return klanten;
+    }
+
+    public void voegKlantToe(Klant k){
+        klanten.add(k);
+    }
+
+    public void verwijderKlant(String e, String w){
+
+        for(int i = 0; i < klanten.size(); i++){
+            if(klanten.get(i).getEmail().equals(e) && klanten.get(i).getWachtwoord().equals(w)){
+                klanten.remove(i);
+            }
+        }
+
+
     }
 }
