@@ -1,6 +1,8 @@
 package dao;
 
-import model.Adres;
+
+
+import Domain.Adres;
 
 import javax.sql.DataSource;
 import java.io.Serializable;

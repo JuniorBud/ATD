@@ -1,8 +1,8 @@
 package dao;
 
-import model.Adres;
-import model.Auto;
-import model.Klant;
+import Domain.Adres;
+import Domain.Auto;
+import Domain.Klant;
 
 import javax.sql.DataSource;
 import java.io.Serializable;
@@ -122,8 +122,8 @@ public class KlantDAO implements GenericDAO {
             con = data.getConnection();
             Klant klant = (Klant) value;
             pst = con.prepareStatement("UPDATE klant SET voornaam= ?, toevoeging= ?,achternaam= ?, email= ?, telnr= ? WHERE klant_id = " + klant.getId() + ";");
-            pst.setString(1, klant.getVoornaam());
-            pst.setString(2, klant.getToevoeging());
+            pst.setString(1, klant.getNaam());
+            pst.setString(2, klant.getTussenvoegsel());
             pst.setString(3, klant.getAchternaam());
             pst.setString(4, klant.getEmail());
             pst.setString(5, klant.getTelnr());

@@ -17,11 +17,12 @@ public class AutoRegistrerenServlet extends HttpServlet{
 		String merk = req.getParameter("merk");
 		String type = req.getParameter("type");
 		String kenteken = req.getParameter("kenteken");
+
 		
 		if(merk != null && type != null && kenteken != null){
 			k.voegAutoToe(new Auto(kenteken,merk,type));
-			for(int i = 0; i < k.getAutoList().size(); i++){
-				req.setAttribute("auto"+i, k.getAutoList().get(i).toString());
+			for(int i = 0; i < k.getAlleAutos().size(); i++){
+				req.setAttribute("auto"+i, k.getAlleAutos().get(i).toString());
 			}
 			RequestDispatcher rd = req.getRequestDispatcher("klant_auto_s.jsp");
 			rd.forward(req,resp);

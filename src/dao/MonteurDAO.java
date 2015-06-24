@@ -1,7 +1,7 @@
 package dao;
 
-import model.Adres;
-import model.Monteur;
+import Domain.Adres;
+import Domain.Monteur;
 
 import javax.sql.DataSource;
 import java.io.Serializable;
@@ -112,8 +112,8 @@ public class MonteurDAO implements GenericDAO {
             con = data.getConnection();
             Monteur monteur = (Monteur) value;
             pst = con.prepareStatement("UPDATE monteur SET voornaam= ?, toevoeging= ?, achternaam = ?, email= ?, telnr= ?, salaris= ? WHERE monteur_id = "+ monteur.getId()+";");
-            pst.setString(1, monteur.getVoornaam());
-            pst.setString(2, monteur.getToevoeging());
+            pst.setString(1, monteur.getNaam());
+            pst.setString(2, monteur.getTussenvoegsel());
             pst.setString(3, monteur.getAchternaam());
             pst.setString(4, monteur.getEmail());
             pst.setString(5, monteur.getTelnr());

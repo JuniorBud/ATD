@@ -3,13 +3,9 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 <title>Klus aanmaken</title>
-
-
 <%@ page import="Domain.Werkplaats"%>
 <%@ page import="Domain.Klantbinding"%>
 <%@ page import="Domain.Klant"%>
-
-
 <script type="text/javascript">
 	function klantAjax() {
 		getKlant();
@@ -17,15 +13,15 @@
 		getAuto();
 	}
 	function startup() {
-		getKlant();
-		getAuto();
+		getAlleKlanten();
+		getAlleAutos();
 	}
 </script>
 </head>
 <body onload="startup()">
 	<jsp:include page="../Menu.jsp" />
 	<div id="content">
-		<form action='Klus.do' method='post'>
+		<form action='KlusAanmaken.do' method='post'>
 			<%
 				Object msgs = request.getAttribute("validation");
 				if (msgs != null) {
@@ -34,7 +30,7 @@
 			%>
 			<div id="alles">
 				<div class="klantInformatie">
-					<label class="label">Type werkzaamheid</label> <label class="label">Klant</label>
+					<label class="label">Type klus</label> <label class="label">Klant</label>
 					<label class="label">Voornaam</label> <label class="label">Tussenvoegsel</label>
 					<label class="label">Achternaam</label> <label class="label">Geboortedatum</label>
 					<label class="label">Straatnaam</label> <label class="label">Huisnummer</label>

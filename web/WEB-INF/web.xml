@@ -8,7 +8,7 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>Login Servlet</servlet-name>
-        <servlet-class> server.servlets.LoginServlet </servlet-class>
+        <servlet-class>server.servlets.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login Servlet</servlet-name>
@@ -22,6 +22,15 @@
     <servlet-mapping>
         <servlet-name>Registration Servlet</servlet-name>
         <url-pattern>/register.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Genereer Brieven Servlet</servlet-name>
+        <servlet-class> server.servlets.GenereerBrievenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Genereer Brieven Servlet</servlet-name>
+        <url-pattern>/BrievenGenereren.do</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -39,7 +48,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>KlantAanmaken Servlet</servlet-name>
-        <url-pattern>KlantAanmakenServlet.do</url-pattern>
+        <url-pattern>/KlantAanmaken.do</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -66,7 +75,7 @@
 
     <servlet-mapping>
         <servlet-name>Klus inplannen servlet</servlet-name>
-        <url-pattern>/Werkplaats/KlusInplannen.do</url-pattern>
+        <url-pattern>Werkplaats/KlusInplannen.do</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -77,7 +86,7 @@
 
     <servlet-mapping>
         <servlet-name>Weekplanning</servlet-name>
-        <url-pattern>/Werkplaats/Weekplanning.do</url-pattern>
+        <url-pattern>Werkplaats/Weekplanning.do</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -88,7 +97,7 @@
 
     <servlet-mapping>
         <servlet-name>KlusServlet</servlet-name>
-        <url-pattern>/Werkplaats/Klus.do</url-pattern>
+        <url-pattern>Werkplaats/Klus.do</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -99,7 +108,7 @@
 
     <servlet-mapping>
         <servlet-name>KlusAfrondenServlet</servlet-name>
-        <url-pattern>/Werkplaats/KlusAfronden.do</url-pattern>
+        <url-pattern>Werkplaats/KlusAfronden.do</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>ReserveringAanmaken</servlet-name>
@@ -122,6 +131,43 @@
         <servlet-name>Reservering</servlet-name>
         <url-pattern>Reserveringen/Reservering.do</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Template Aanmaken Servlet</servlet-name>
+        <servlet-class>server.servlets.TemplateAanmakenServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Template Aanmaken Servlet</servlet-name>
+        <url-pattern>Klantenbinding/TemplateAanmaken.do
+        </url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Template Aanpassen Servlet</servlet-name>
+        <servlet-class>server.servlets.TemplateAanpassenServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Template Aanpassen Servlet</servlet-name>
+        <url-pattern>Klantenbinding/TemplateAanpassen.do
+        </url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Template Verwijderen Servlet</servlet-name>
+        <servlet-class>server.servlets.TemplateVerwijderenServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Template Verwijderen Servlet</servlet-name>
+        <url-pattern>Klantenbinding/TemplateVerwijderen.do
+        </url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
 

@@ -1,6 +1,6 @@
 package dao;
 
-import model.Onderdeel;
+import Domain.Onderdeel;
 
 import javax.sql.DataSource;
 import java.io.Serializable;
@@ -103,7 +103,7 @@ public class OnderdeelDAO implements GenericDAO {
             con = data.getConnection();
             Onderdeel onderdeel = (Onderdeel) value;
             pst = con.prepareStatement("INSERT INTO onderdeel(artikelnr, prijs, merk, type) VALUES (?,?,?,?);", pst.RETURN_GENERATED_KEYS);
-            pst.setString(1, onderdeel.getArtikelnr());
+            pst.setString(1, onderdeel.getOnderdeelNummer());
             pst.setDouble(2, onderdeel.getPrijs());
             pst.setString(3, onderdeel.getMerk());
             pst.setString(4, onderdeel.getType());
@@ -142,7 +142,7 @@ public class OnderdeelDAO implements GenericDAO {
             Onderdeel onderdeel = (Onderdeel) value;
             pst = con.prepareStatement("UPDATE onderdeel SET artikelnr = ?, prijs = ?, merk = ?, type = ? " +
                     "WHERE onderdeel_id = " +onderdeel.getId() +";");
-            pst.setString(1, onderdeel.getArtikelnr());
+            pst.setString(1, onderdeel.getOnderdeelNummer());
             pst.setDouble(2, onderdeel.getPrijs());
             pst.setString(3, onderdeel.getMerk());
             pst.setString(4, onderdeel.getType());

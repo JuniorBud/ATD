@@ -1,6 +1,7 @@
 package dao;
 
-import model.Auto;
+
+import Domain.Auto;
 
 import javax.sql.DataSource;
 import java.io.Serializable;

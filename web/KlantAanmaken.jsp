@@ -7,7 +7,7 @@
 <body>
 <H1>Registreren</H1>
 <p>Graag zouden wij de volgende informatie van u willen:</p>
-<form method = "post" action = "KlantAanmakenServlet.do">
+<form method = "post" action = "KlantAanmaken.do">
 <div>Voornaam:<input type = "text" name = "voornaam"></div>
 <div>Achternaam:<input type = "text" name = "achternaam"></div>
 <div>Wachtwoord:<input type = "password" name = "wachtwoord"></div>
